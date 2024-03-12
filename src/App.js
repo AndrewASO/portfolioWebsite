@@ -1,23 +1,23 @@
 import logo from './logo.svg';
 import './App.css';
+//import 'bootstrap/dist/css/bootstrap.min.css';
+import React from 'react';
+import Navbar from './NavBar/Navbar';
+import Home from './Home/Home';
+import Skills from './Skills/Skills';
+import Projects from './Projects/Projects';
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar />
+      <section id="home" style={{ height: '100vh', paddingTop: '60px' }}> {/* Ensure this section is tall enough and starts below the Navbar */}
+        <Home />
+        </section>
+      {/* When you have the other components ready, uncomment and add them here */}
+      <Projects />
+      <Skills />
     </div>
   );
 }
