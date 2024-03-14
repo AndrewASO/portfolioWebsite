@@ -14,8 +14,7 @@ function App() {
       <Navbar />
       <section id="home" style={{ height: '100vh', paddingTop: '60px' }}> {/* Ensure this section is tall enough and starts below the Navbar */}
         <Home />
-        </section>
-      {/* When you have the other components ready, uncomment and add them here */}
+      </section>
       <Projects />
       <Skills />
     </div>

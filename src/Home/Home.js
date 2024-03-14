@@ -15,6 +15,7 @@ export default function Home() {
     width: '70%', // Making "About Me" larger
     padding: '20px',
     textAlign: 'center', // Center "Welcome" text
+    fontSize: '20px', // Increasing the font size for "About Me" text
   };
 
   const projectsStyle = {
@@ -32,23 +33,33 @@ export default function Home() {
     borderStyle: 'solid',
   };
 
+  const projectLinkContainerStyle = {
+    marginBottom: '20px', // Spacing between project links
+    position: 'relative',
+  };
+
   const projectLinkStyle = {
     color: '#ffffff',
     textDecoration: 'none',
-    display: 'block',
-    margin: '10px 0',
+    position: 'relative',
+    display: 'inline', // Make link inline to fit content
+    paddingBottom: '2px', // Spacing for the gradient line
   };
 
-  const topLeftCorner = { ...cornerStyle, top: '-20px', left: '-20px', borderWidth: '20px 20px 0 0', borderColor: '#0235e9 transparent transparent transparent' };
-  const topRightCorner = { ...cornerStyle, top: '-20px', right: '0', borderWidth: '0 20px 20px 0', borderColor: 'transparent transparent #0235e9 transparent' };
-  const bottomLeftCorner = { ...cornerStyle, bottom: '-20px', left: '-20px', borderWidth: '20px 0 0 20px', borderColor: 'transparent transparent transparent #0235e9' };
-  const bottomRightCorner = { ...cornerStyle, bottom: '-20px', right: '0', borderWidth: '0 0 20px 20px', borderColor: 'transparent transparent #0235e9 transparent' };
+  const topLeftCorner = { ...cornerStyle, top: '30px', left: '100px', borderWidth: '30px 30px 0 0', borderColor: '#0235e9 transparent transparent transparent' };
+  const topRightCorner = { ...cornerStyle, top: '30px', right: '100px', borderWidth: '0 30px 30px 0', borderColor: 'transparent #0235e9 transparent transparent' };
+  const bottomLeftCorner = { ...cornerStyle, bottom: '10px', left: '100px', borderWidth: '30px 0 0 30px', borderColor: 'transparent transparent transparent #0235e9' };
+  const bottomRightCorner = { ...cornerStyle, bottom: '10px', right: '100px', borderWidth: '0 0 30px 30px', borderColor: 'transparent transparent #0235e9 transparent' };
+
+  // Adjust this value if needed to ensure visibility below your Navbar
+  const adjustedHeaderPosition = '60px'; // Example adjustment
 
   return (
     <>
-      <header style={{ display: 'flex', justifyContent: 'flex-end', padding: '1rem', backgroundColor: '#000', position: 'fixed', top: 0, width: '100%', zIndex: 100 }}>
-        <a href="insertGitHubURLHere" style={{ color: '#ffffff', textDecoration: 'none', margin: '0 1rem' }}>GitHub</a>
-        <a href="insertEmailHere" style={{ color: '#ffffff', textDecoration: 'none', margin: '0 1rem' }}>Email</a>
+      <header style={{ display: 'flex', justifyContent: 'flex-end', padding: '1rem', position: 'absolute', top: adjustedHeaderPosition, right: 0, zIndex: 1050 }}>
+        <a href="https://github.com/AndrewASO" style={{ color: '#ffffff', textDecoration: 'none', margin: '0 1rem' }}>GitHub</a>
+        <a href="mailto:solivera.andrew@gmail.com" style={{ color: '#ffffff', textDecoration: 'none', margin: '0 1rem' }}>Email</a>
+        <a href="https://linkedinprofile.com" style={{ color: '#ffffff', textDecoration: 'none', margin: '0 1rem' }}>LinkedIn</a>
       </header>
       <div style={containerStyle}>
         <div style={aboutStyle}>
@@ -57,16 +68,26 @@ export default function Home() {
         </div>
         <div style={projectsStyle}>
           <h2>Projects</h2>
-          <div>
-            <a href="https://github.com/AndrewASO/motivationWebsite" style={projectLinkStyle}>Personal Website Frontend</a>
-            <a href="https://github.com/AndrewASO/motivationWebsiteBE" style={projectLinkStyle}>Personal Website Backend</a>
-            <a href="https://github.com/marios-petrov/ScientificCitationSentimentAnalysisProject" style={projectLinkStyle}>NLP Scientific Citation</a>
-            <a href="https://github.com/AndrewASO/NuPathBE" style={projectLinkStyle}>Software Engineering Project 2 Backend</a>
-            <a href="https://github.com/AndrewASO/GameFinderWebserver" style={projectLinkStyle}>Software Engineering Final Project Backend</a>
-            <a href="https://github.com/Furry/cppgamedev" style={projectLinkStyle}>C++ 2D Game</a>
+          <div style={projectLinkContainerStyle}>
+            <a href="https://github.com/AndrewASO/motivationWebsite" className="project-link" style={projectLinkStyle}>Personal Website Frontend</a>
+          </div>
+          <div style={projectLinkContainerStyle}>
+            <a href="https://github.com/AndrewASO/motivationWebsiteBE" className="project-link" style={projectLinkStyle}>Personal Website Backend</a>
+          </div>
+          <div style={projectLinkContainerStyle}>
+            <a href="https://github.com/marios-petrov/ScientificCitationSentimentAnalysisProject" className="project-link" style={projectLinkStyle}>NLP Scientific Citation</a>
+          </div>
+          <div style={projectLinkContainerStyle}>
+            <a href="https://github.com/AndrewASO/NuPathBE" className="project-link" style={projectLinkStyle}>Software Engineering Project 2 Backend</a>
+          </div>
+          <div style={projectLinkContainerStyle}>
+            <a href="https://github.com/AndrewASO/GameFinderWebserver" className="project-link" style={projectLinkStyle}>Software Engineering Final Project Backend</a>
+          </div>
+          <div style={projectLinkContainerStyle}>
+            <a href="https://github.com/Furry/cppgamedev" className="project-link" style={projectLinkStyle}>C++ 2D Game</a>
           </div>
           <div style={topLeftCorner}></div>
-          <div style={{ ...topRightCorner, borderWidth: '0 20px 20px 0', borderColor: 'transparent #0235e9 transparent transparent' }}></div> {/* Correct rotation for top right */}
+          <div style={topRightCorner}></div>
           <div style={bottomLeftCorner}></div>
           <div style={bottomRightCorner}></div>
         </div>
