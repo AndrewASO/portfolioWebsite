@@ -23,3 +23,13 @@ body {
 }
 
 /* You can add more custom styles and classes */
+@media screen and (max-width: 600px) {
+  body {
+    background-color: lightblue;
+  }
+
+  /* Adding custom padding to the Home section for mobile devices */
+  .home-section {
+    padding-bottom: 500px; /* Adjust based on your design needs */
+  }
+}
