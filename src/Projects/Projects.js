@@ -37,22 +37,24 @@ const projectData = [
 
 export default function Projects() {
   return (
-    <section id="projects" style={{ padding: '4rem 0', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
-      <h1 style={{ fontSize: '2.5em', fontWeight: 'bold', textAlign: 'center', marginBottom: '2rem' }}>Projects</h1>
-      {projectData.map((project, index) => (
-        <div key={index} style={{ marginBottom: '1.5rem', color: '#ffffff', maxWidth: '650px', textAlign: 'center' }}>
-          <h2 style={{ fontSize: '1.5em', fontWeight: 'bold' }}>{project.name}</h2>
-          <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', marginBottom: '10px' }}>
-            {project.skills.map((skill, skillIndex) => (
-              <div key={skillIndex} style={{ background: '#333', padding: '5px 10px', margin: '5px', borderRadius: '5px', display: 'flex', alignItems: 'center' }}>
-                <CheckIcon style={{ color: "#76e346", marginRight: "10px", width: "20px", height: "20px" }} />
-                <span style={{ fontSize: '0.85em' }}>{skill}</span>
-              </div>
-            ))}
+    <div className="projects-container">
+      <section id="projects" style={{ padding: '4rem 0', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+        <h1 style={{ fontSize: '2.5em', fontWeight: 'bold', textAlign: 'center', marginBottom: '2rem' }}>Projects</h1>
+        {projectData.map((project, index) => (
+          <div key={index} style={{ marginBottom: '1.5rem', color: '#ffffff', maxWidth: '650px', textAlign: 'center' }}>
+            <h2 style={{ fontSize: '1.5em', fontWeight: 'bold' }}>{project.name}</h2>
+            <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', marginBottom: '10px' }}>
+              {project.skills.map((skill, skillIndex) => (
+                <div key={skillIndex} style={{ background: '#333', padding: '5px 10px', margin: '5px', borderRadius: '5px', display: 'flex', alignItems: 'center' }}>
+                  <CheckIcon style={{ color: "#76e346", marginRight: "10px", width: "20px", height: "20px" }} />
+                  <span style={{ fontSize: '0.85em' }}>{skill}</span>
+                </div>
+              ))}
+            </div>
+            <p style={{ fontSize: '1em' }}>{project.description}</p>
           </div>
-          <p style={{ fontSize: '1em' }}>{project.description}</p>
-        </div>
-      ))}
-    </section>
+        ))}
+      </section>
+    </div>
   );
 }

@@ -55,18 +55,18 @@ export default function Home() {
   const adjustedHeaderPosition = '60px'; // Example adjustment
 
   return (
-    <>
+    <div className='home-container'>
       <header style={{ display: 'flex', justifyContent: 'flex-end', padding: '1rem', position: 'absolute', top: adjustedHeaderPosition, right: 0, zIndex: 1050 }}>
         <a href="https://github.com/AndrewASO" style={{ color: '#ffffff', textDecoration: 'none', margin: '0 1rem' }}>GitHub</a>
         <a href="mailto:solivera.andrew@gmail.com" style={{ color: '#ffffff', textDecoration: 'none', margin: '0 1rem' }}>Email</a>
         <a href="https://linkedinprofile.com" style={{ color: '#ffffff', textDecoration: 'none', margin: '0 1rem' }}>LinkedIn</a>
       </header>
       <div style={containerStyle}>
-        <div style={aboutStyle}>
+        <div style={aboutStyle} className='about-container'>
           <h1>Welcome</h1>
           <p>As I navigate the final year of my Computer Science degree, I've engaged deeply with technologies across the spectrum, including ML, NLP, DL, embedded systems, and game design. My educational journey is complemented by hands-on project experience, from collaborative software engineering projects to innovative explorations in NLP and game development. With a comprehensive skill set that includes React, JavaScript, Python, and more, I’m poised to contribute to dynamic, technology-driven environments. I am particularly drawn to roles that promise diverse challenges and opportunities for growth, aiming to leverage my broad technical knowledge and collaborative experiences in the tech industry.</p>
         </div>
-        <div style={projectsStyle}>
+        <div style={projectsStyle} className='project-links-container'>
           <h2>Projects</h2>
           <div style={projectLinkContainerStyle}>
             <a href="https://github.com/AndrewASO/motivationWebsite" className="project-link" style={projectLinkStyle}>Personal Website Frontend</a>
@@ -92,6 +92,6 @@ export default function Home() {
           <div style={bottomRightCorner}></div>
         </div>
       </div>
-    </>
+    </div>
   );
 }

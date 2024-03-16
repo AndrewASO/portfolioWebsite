@@ -24,12 +24,18 @@ body {
 
 /* You can add more custom styles and classes */
 @media screen and (max-width: 600px) {
-  body {
-    background-color: lightblue;
+  .home-container {
+    padding-bottom: 100px; /* Adds padding at the bottom of the home section on mobile */
   }
 
-  /* Adding custom padding to the Home section for mobile devices */
-  .home-section {
-    padding-bottom: 500px; /* Adjust based on your design needs */
+  .projects-container {
+    padding-top: 1000px; /* Adds padding at the top of the projects section on mobile */
   }
+
+  .about-container, .projects-links-container {
+    width: 100%; /* Ensure full width */
+    /* Add any additional styling specific to mobile view here */
+  }
+
 }
+
