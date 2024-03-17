@@ -1,9 +1,20 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 export default function Home() {
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 600);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 600);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+  
   const containerStyle = {
     display: 'flex',
-    flexDirection: 'row',
+    flexDirection: isMobile ? 'column' : 'row',
     justifyContent: 'flex-start',
     alignItems: 'flex-start',
     paddingTop: '100px',
@@ -12,19 +23,22 @@ export default function Home() {
   };
 
   const aboutStyle = {
-    width: '70%', // Making "About Me" larger
+    width: isMobile ? '90%' : '70%', // Adjust width based on screen size
     padding: '20px',
-    textAlign: 'center', // Center "Welcome" text
-    fontSize: '20px', // Increasing the font size for "About Me" text
+    textAlign: 'center', // Keeps text centered
+    fontSize: '20px',
+    margin: isMobile ? '0 auto' : '0', // Center-align the container on mobile
   };
-
+  
   const projectsStyle = {
-    width: '30%', // Making "Projects" smaller
+    width: isMobile ? '90%' : '30%', // Adjust width based on screen size
     padding: '20px',
     position: 'relative',
-    marginLeft: '100px', // Adjust to prevent going off-screen
-    textAlign: 'center', // Center "Projects" title
+    marginLeft: isMobile ? '0' : '100px', // Remove left margin on mobile
+    textAlign: 'center', // Keeps title centered
+    margin: isMobile ? '0 auto' : '0', // Center-align the container on mobile
   };
+  
 
   const cornerStyle = {
     position: 'absolute',
