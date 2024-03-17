@@ -29,7 +29,7 @@ body {
   }
 
   .projects-container {
-    padding-top: 150px; /* Adds padding at the top of the projects section on mobile */
+    padding-top: 300px; /* Adds padding at the top of the projects section on mobile */
   }
 
   .about-container, .projects-links-container {
