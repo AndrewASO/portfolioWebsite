@@ -73,7 +73,7 @@ export default function Home() {
       <header style={{ display: 'flex', justifyContent: 'flex-end', padding: '1rem', position: 'absolute', top: adjustedHeaderPosition, right: 0, zIndex: 1050 }}>
         <a href="https://github.com/AndrewASO" style={{ color: '#ffffff', textDecoration: 'none', margin: '0 1rem' }}>GitHub</a>
         <a href="mailto:solivera.andrew@gmail.com" style={{ color: '#ffffff', textDecoration: 'none', margin: '0 1rem' }}>Email</a>
-        <a href="https://linkedinprofile.com" style={{ color: '#ffffff', textDecoration: 'none', margin: '0 1rem' }}>LinkedIn</a>
+        <a href="https://www.linkedin.com/in/andrew-skevington-olivera-2a9a1a2bb/" style={{ color: '#ffffff', textDecoration: 'none', margin: '0 1rem' }}>LinkedIn</a>
       </header>
       <div style={containerStyle}>
         <div style={aboutStyle} className='about-container'>
